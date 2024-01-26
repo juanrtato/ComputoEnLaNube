@@ -37,11 +37,11 @@ int main()
 
     //Números aleatorios para a y b
     for (int i = 0; i < N; i++) {
-        a[i] = std::rand() % 1000; // Número aleatorio entre 0 y 99
-        b[i] = std::rand() % 1000; // Número aleatorio entre 0 y 99
+        a[i] = std::rand() % 1000; // Número aleatorio entre 0 y 1000
+        b[i] = std::rand() % 1000; // Número aleatorio entre 0 y 1000
     }
     
-
+    //Paralelizando la suma de los dos arreglos
     #pragma omp parallel for \
     shared(a, b, c, pedazos) private(i) \
     schedule(static, pedazos)
