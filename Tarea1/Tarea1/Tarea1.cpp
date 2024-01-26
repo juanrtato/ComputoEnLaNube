@@ -24,17 +24,7 @@ int main()
     int c[N];
     int pedazos = chunk;
     int i;
-
-    // Estableciendo el numero de hilos
-    int nHilos;
-    std::cout << "Cuantos hilos quieres trabajar: ";
-    std::cin >> nHilos;
-    #ifdef _OPENMP
-        omp_set_num_threads(nHilos);
-        std::cout << "Se establecieron " << nHilos << " correctamente" << std::endl;
-    #endif
     
-
     //Números aleatorios para a y b
     for (int i = 0; i < N; i++) {
         a[i] = std::rand() % 1000; // Número aleatorio entre 0 y 1000
